@@ -95,8 +95,7 @@ public class ModalCommandsExtension : BaseExtension
 
             return;
         }
-
-        modalSubmit.Handled = true;
+        
 
         var commandInstance = (ModalCommandModule)SpawnInstance(command);
 
@@ -258,6 +257,10 @@ public class ModalCommandsExtension : BaseExtension
         _converters.Add(typeof(T), converter);
     }
 
+    public override void Dispose()
+    {
+        
+    }
 
     public bool UnregisterConverter<T>() => _converters.Remove(typeof(T));
 
